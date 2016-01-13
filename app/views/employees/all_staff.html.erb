@@ -1,0 +1,11 @@
+<h1>Full Staff Directory</h1>
+
+<% @employees.each do |employee| %>
+<h3><%= employee.first_name %></h3>
+<h3><%= employee.last_name %></h3>
+<h3><%= employee.email %></h3>
+<h3><%= employee.job_title %></h3>
+<h3><%= employee.salary %></h3>
+<h3><%= employee.phone_number %></h3>
+<h3><%= employee.gender %></h3>
+<% end %>
