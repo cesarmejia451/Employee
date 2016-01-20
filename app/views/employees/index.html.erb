@@ -1,12 +1,13 @@
 <h1>Full Staff Directory</h1>
 
+<%= link_to "Add a new employee", "/employees/new" %>
+
 <% @employees.each do |employee| %>
-<h3><%= employee.first_name %></h3>
-<h3><%= employee.last_name %></h3>
+<h3><a href="/employees/<%= employee.id %>"><%= employee.full_name %></a>
 <h5><%= employee.email %></h5>
 <h5><%= employee.job_title %></h5>
 <h5><%= employee.salary %></h3>
-<h5><%= employee.phone_number %></h5>
+<h5><%= employee.japan_country_code %></h5>
 <h5><%= employee.gender %></h5>
 <hr>
 <% end %>
