@@ -9,13 +9,16 @@ class Employee < ActiveRecord::Base
   end
 
   def full_name
-    "#{first_name} #{last_name}"
+    "#{first_name} #{middle_name} #{last_name}"
   end
 
   def japan_country_code
-    cc = "+81"
-    number = phone_number
-    "#{cc} #{number}"
+    if phone_number.start_with?("1")
+      phone_number.sub!("1","")
+    end
+      phone_number.gsub!(/\D/,"")
+      phone_number.insert(4,"")
+    "+81 #{phone_number}"
     
   end
 end

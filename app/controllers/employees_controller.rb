@@ -18,7 +18,7 @@ class EmployeesController < ApplicationController
   end
 
   def create
-    @employee = Employee.create({first_name: params[:first_name], last_name: params[:last_name], email: params[:email], job_title: params[:job_title], salary: params[:salary], phone_number: params[:phone_number], gender: params[:gender]})
+    @employee = Employee.create({first_name: params[:first_name], middle_name: params[:middle_name], last_name: params[:last_name], email: params[:email], job_title: params[:job_title], salary: params[:salary], phone_number: params[:phone_number], gender: params[:gender], bio: params[:bio]})
 
     flash[:success] = "New Employee Created!"
     redirect_to "/employees"
@@ -31,7 +31,7 @@ class EmployeesController < ApplicationController
   def update
     @employee = Employee.find(params[:id])
 
-    @employee.update({first_name: params[:first_name], last_name: params[:last_name], email: params[:email], job_title: params[:job_title], salary: params[:salary], phone_number: params[:phone_number], gender: params[:gender]})
+    @employee.update({first_name: params[:first_name], middle_name: params[:middle_name], last_name: params[:last_name], email: params[:email], job_title: params[:job_title], salary: params[:salary], phone_number: params[:phone_number], gender: params[:gender], bio: params[:bio]})
 
     flash[:success] = "Employee Updated!"
     redirect_to "/employees/#{@employee.id}"
