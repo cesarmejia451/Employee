@@ -7,7 +7,15 @@
 <h5><%= @employee.japan_country_code %></h5>
 <h5><%= @employee.gender %></h5>
 <h5><%= @employee.bio %></h5>
+<h5>Groups:</h5>
+  <ul>
+    <h6><% @groups.each do |group| %>
+      <li><%= group.name.capitalize %></li>
+    <% end %></h6>
+  </ul>
 <h6>Last updated on: <%= @employee.friendly_updated_at %> at <%= @employee.friendly_updated_time %></h6>
+
+<h6>Added by: <%= @employee.user.email %></h6>
 
 
 <%= link_to "Home", "/employees" %>

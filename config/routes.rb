@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+  devise_for :users
+  root 'employees#index'
+
+
   get '/' => 'employees#staff'
   get '/employees' => 'employees#index'
 
@@ -11,4 +16,6 @@ Rails.application.routes.draw do
   patch 'employees/:id' => 'employees#update'
 
   delete 'employees/:id' => 'employees#destroy'
+
+  post '/search' => 'employees#search'
 end
